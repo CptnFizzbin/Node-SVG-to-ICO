@@ -2,14 +2,32 @@
   "name": "svg-to-ico",
   "version": "1.0.17",
   "description": "Utility that translates an SVG Image to a .ico format",
-  "main": "svg-to-ico.js",
-  "types": "svg-to-ico.d.ts",
-  "bin": {
-    "svg-to-ico": "index.js"
+  "packageManager": "npm@9.9.4+sha512.37371088ba6a0ee2e16af772276277b4627f9e2fde6dca87545664bf50b8ffa95b96b6943db3e0089e1585be286b71458516b6623f60039f23187ff3b4ab9e35",
+  "type": "module",
+  "main": "./dist/cjs/svg-to-ico.cjs.js",
+  "module": "./dist/esm/svg-to-ico.js",
+  "types": "./dist/types/svg-to-ico.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/svg-to-ico.d.ts",
+        "default": "./dist/esm/svg-to-ico.js"
+      },
+      "require": {
+        "types": "./dist/types/svg-to-ico.d.ts",
+        "default": "./dist/cjs/svg-to-ico.cjs.js"
+      }
+    }
   },
   "scripts": {
-    "test": "node index.js koala.svg",
-    "test2": "node index.js logview.svg logview.ico"
+    "clean": "rm -rf dist",
+    "lint": "eslint src --ext .ts",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "prepack": "npm run build",
+    "test": "node dist/cjs/cli.js tests/__fixtures__/koala.svg",
+    "test2": "node dist/cjs/cli.js logview.svg tests/__fixtures__/logview.ico"
   },
   "repository": {
     "type": "git",
@@ -29,9 +47,17 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.3",
-    "eslint": "^9.39.3",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.11.0",
+    "eslint": "^10.0.2",
+    "jiti": "^2.6.1",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.56.1"
-  }
+  },
+  "bin": {
+    "svg-to-ico": "./dist/cjs/cli.js"
+  },
+  "files": [
+    "dist"
+  ]
 }
