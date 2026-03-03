@@ -9,5 +9,6 @@ node_modules/
 favicon.ico
 
 # Build artifacts
+tmp/
 dist/
 *.tsbuildinfo

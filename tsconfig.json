@@ -9,7 +9,6 @@
     "declarationMap": true,
     "declarationDir": "./dist/types",
     "outDir": "./dist/esm",
-    "rootDir": "./src",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -26,7 +25,8 @@
     "sourceMap": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "tests/**/*"
   ],
   "exclude": [
     "node_modules",

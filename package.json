@@ -7,6 +7,9 @@
   "main": "./dist/cjs/svg-to-ico.cjs.js",
   "module": "./dist/esm/svg-to-ico.js",
   "types": "./dist/types/svg-to-ico.d.ts",
+  "engines": {
+    "node": ">=24"
+  },
   "exports": {
     ".": {
       "import": {
@@ -26,8 +29,7 @@
     "build:cjs": "tsc --project tsconfig.cjs.json",
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
     "prepack": "npm run build",
-    "test": "node dist/cjs/cli.js tests/__fixtures__/koala.svg",
-    "test2": "node dist/cjs/cli.js logview.svg tests/__fixtures__/logview.ico"
+    "test": "vitest run"
   },
   "repository": {
     "type": "git",
@@ -47,12 +49,13 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
+    "@eslint/js": "^9.39.3",
     "@types/node": "^24.11.0",
     "eslint": "^10.0.2",
     "jiti": "^2.6.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.1"
+    "typescript-eslint": "^8.56.1",
+    "vitest": "^4.0.18"
   },
   "bin": {
     "svg-to-ico": "./dist/cjs/cli.js"
