@@ -2,7 +2,7 @@ import path from 'node:path';
 import fs from 'node:fs/promises';
 import { decode } from 'ico-endec';
 
-export const ROOT_DIR = path.resolve(import.meta.dirname, '..');
+export const ROOT_DIR = path.resolve(__dirname, '..');
 export const FIXTURE_DIR = path.resolve(ROOT_DIR, 'tests', '__fixtures__');
 
 export async function createTempDir () {
