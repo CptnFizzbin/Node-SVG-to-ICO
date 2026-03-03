@@ -2,7 +2,7 @@
   "name": "svg-to-ico",
   "version": "1.0.17",
   "description": "Utility that translates an SVG Image to a .ico format",
-  "packageManager": "npm@9.9.4+sha512.37371088ba6a0ee2e16af772276277b4627f9e2fde6dca87545664bf50b8ffa95b96b6943db3e0089e1585be286b71458516b6623f60039f23187ff3b4ab9e35",
+  "packageManager": "yarn@4.13.0",
   "type": "module",
   "main": "./dist/cjs/svg-to-ico.cjs.js",
   "module": "./dist/esm/svg-to-ico.js",
@@ -57,9 +57,7 @@
     "typescript-eslint": "^8.56.1",
     "vitest": "^4.0.18"
   },
-  "bin": {
-    "svg-to-ico": "./dist/cjs/cli.js"
-  },
+  "bin": "./dist/cjs/cli.js",
   "files": [
     "dist"
   ]

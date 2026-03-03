@@ -8,6 +8,9 @@ node_modules/
 # Artifacts
 favicon.ico
 
+# Yarn files
+.yarn/
+
 # Build artifacts
 tmp/
 dist/
